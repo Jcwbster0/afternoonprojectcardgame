@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HwW-9g-iWt">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Card Collection View Controller-->
+        <scene sceneID="D7K-5b-OEc">
+            <objects>
+                <collectionViewController id="BOh-6f-WE5" customClass="CardCollectionViewController" customModule="afternoonProjectCardGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="llH-8S-niZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wjx-Nn-Ias">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="animalCell" id="Dp0-5Y-sBm" customClass="AnimalCollectionViewCell" customModule="afternoonProjectCardGame" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QuI-WO-wHd">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l4h-Md-DFZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="l4h-Md-DFZ" secondAttribute="bottom" id="ANn-0s-W8r"/>
+                                        <constraint firstItem="l4h-Md-DFZ" firstAttribute="top" secondItem="QuI-WO-wHd" secondAttribute="top" id="LIB-zs-ysv"/>
+                                        <constraint firstItem="l4h-Md-DFZ" firstAttribute="leading" secondItem="QuI-WO-wHd" secondAttribute="leading" id="NNT-Db-ban"/>
+                                        <constraint firstAttribute="trailing" secondItem="l4h-Md-DFZ" secondAttribute="trailing" id="Xac-jt-hAd"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="animalImageView" destination="l4h-Md-DFZ" id="6D9-4Z-puA"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="BOh-6f-WE5" id="XAA-FM-Z5d"/>
+                            <outlet property="delegate" destination="BOh-6f-WE5" id="LT0-2w-WIz"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="6H9-QZ-DBt">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="line.horizontal.3.decrease" catalog="system" id="U3h-fl-u62">
+                            <connections>
+                                <segue destination="6Qx-Bh-R65" kind="presentation" identifier="toFilterVC" id="lWM-Rx-EUI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mgm-ZU-sQF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1118.840579710145" y="-73.660714285714278"/>
+        </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="zzd-rr-iT8">
+            <objects>
+                <viewController id="6Qx-Bh-R65" customClass="FilterViewController" customModule="afternoonProjectCardGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5fg-bV-GTt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="Stk-8w-nv9">
+                                <rect key="frame" x="157" y="274.5" width="100" height="259"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2U-RJ-gqF">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Hi5-3y-mCy"/>
+                                            <constraint firstAttribute="width" secondItem="L2U-RJ-gqF" secondAttribute="height" multiplier="1:1" id="pAw-sD-89o"/>
+                                        </constraints>
+                                        <state key="normal" image="caticon"/>
+                                        <connections>
+                                            <action selector="catButtonTapped:" destination="6Qx-Bh-R65" eventType="touchUpInside" id="EJS-vV-TC1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwK-eh-aMT">
+                                        <rect key="frame" x="0.0" y="159" width="100" height="100"/>
+                                        <state key="normal" image="dogicon2"/>
+                                        <connections>
+                                            <action selector="dogButtonTapped:" destination="6Qx-Bh-R65" eventType="touchUpInside" id="wNS-PL-YzF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PIu-4W-1oT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Stk-8w-nv9" firstAttribute="centerX" secondItem="PIu-4W-1oT" secondAttribute="centerX" id="Xp0-Ar-iXc"/>
+                            <constraint firstItem="Stk-8w-nv9" firstAttribute="centerY" secondItem="PIu-4W-1oT" secondAttribute="centerY" id="fQV-AK-XGQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oti-Tg-MMc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1875" y="-74"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZQQ-gm-2qX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HwW-9g-iWt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vvc-Ap-kr9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BOh-6f-WE5" kind="relationship" relationship="rootViewController" id="c19-T8-Dbc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5r-k0-wjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="208.69565217391306" y="-73.660714285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="caticon" width="840" height="859"/>
+        <image name="dogicon2" width="300" height="323"/>
+        <image name="line.horizontal.3.decrease" catalog="system" width="128" height="73"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
